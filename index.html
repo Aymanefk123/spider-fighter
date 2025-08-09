@@ -1,170 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spider Fighter | Vaultz4Games</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
-            color: white;
-            text-align: center;
-        }
-
-        header {
-            padding: 15px;
-            background: linear-gradient(90deg, #00ff85, #00c3ff);
-            font-size: 1.8em;
-            font-weight: bold;
-            color: black;
-            letter-spacing: 1.5px;
-            text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
-            box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
-        }
-
-        .game-container {
-            margin-top: 20px;
-            padding: 0 15px;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-
-        .game-icon {
-            width: 170px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        h1 {
-            margin-top: 12px;
-            font-size: 1.9em;
-            color: #ffcc00;
-            text-shadow: 0px 0px 15px #ff9900;
-        }
-
-        .stars {
-            font-size: 1.4em;
-            color: gold;
-            margin-bottom: 15px;
-        }
-
-        p {
-            max-width: 500px;
-            margin: auto;
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        /* Download Button */
-        button {
-            padding: 15px 40px;
-            font-size: 1.2em;
-            font-weight: bold;
-            background: linear-gradient(45deg, #00ff85, #00c3ff);
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            color: black;
-            box-shadow: 0 0 20px rgba(0, 255, 200, 0.8);
-            transition: all 0.3s ease-in-out;
-            margin-top: 15px;
-            animation: pulse 1.5s infinite;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 200, 1);
-        }
-
-        /* Screenshots Section */
-        .screenshots {
-            margin: 25px auto;
-            max-width: 95%;
-        }
-
-        .screenshots img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .screenshots img:hover {
-            transform: scale(1.02);
-        }
-
-        footer {
-            margin-top: 40px;
-            padding: 10px;
-            font-size: 0.8em;
-            color: #888;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 200, 0.7); }
-            50% { box-shadow: 0 0 25px rgba(0, 255, 200, 1); }
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 600px) {
-            header {
-                font-size: 1.5em;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            button {
-                width: 80%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaultz4Games - Spider Fighter Mod</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #111, #1a1a1a);
+        color: white;
+        text-align: center;
+    }
+    header {
+        padding: 20px;
+        background-color: #222;
+    }
+    header h1 {
+        font-size: 28px;
+        color: #ffcc00;
+    }
+    .game-icon {
+        width: 150px;
+        border-radius: 20px;
+        margin: 15px auto;
+        display: block;
+        box-shadow: 0px 0px 15px #ffcc00;
+    }
+    .stars {
+        margin: 10px 0;
+        font-size: 22px;
+        color: gold;
+    }
+    .screenshots {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    .screenshots img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #000;
+        margin: auto;
+    }
+    .download-btn {
+        background-color: #ffcc00;
+        color: black;
+        padding: 15px 25px;
+        border: none;
+        font-size: 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+        background-color: #ffaa00;
+        transform: scale(1.05);
+    }
+</style>
 </head>
 <body>
 
-    <header>Vaultz4Games</header>
+<header>
+    <h1>Vaultz4Games</h1>
+</header>
 
-    <div class="game-container">
-        <img src="https://cdn-bgp.bluestacks.com/BGP/fr/gametiles_com.starplay.spider.fighter.openworld.jpg" alt="Spider Fighter" class="game-icon">
-        <h1>Spider Fighter <span style="font-size:0.75em; color:#00ff85; text-shadow:0px 0px 10px #00ff85;">(Mod – Unlimited Money)</span></h1>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+<img class="game-icon" src="https://cdn-bgp.bluestacks.com/BGP/fr/gametiles_com.starplay.spider.fighter.openworld.jpg" alt="Spider Fighter Icon">
 
-        <!-- Download Button (Now right below stars) -->
-        <script type="text/javascript">
-            var xwAaq_PzM_dnpSXc={"it":4536540,"key":"aed18"};
-        </script>
-        <script src="https://dfmpe7igjx4jo.cloudfront.net/b05a4c1.js"></script>
-        <button onclick="_lL()">Download Now</button>
+<h2>Spider Fighter (Mod – Unlimited Money)</h2>
+<div class="stars">⭐⭐⭐⭐⭐</div>
 
-        <p>
-            Swing through the city, fight epic battles, and become the ultimate hero in <b>Spider Fighter</b>. Are you ready to save the day?
-        </p>
+<div class="screenshots">
+    <img src="https://play-lh.googleusercontent.com/3brZohEraqKJnb-pWDfbm0scwQaCtRNXGEmQcwsvmCEDI_3Xhx57Nw8jbNaaGXZWfRAA=w526-h296-rw" alt="Screenshot 1">
+    <img src="https://play-lh.googleusercontent.com/6-jMtjEm2sVjz0wOuyuCBr-ZRlEQdtABMIk2aiZb1THa-4RdMDiU-YZcNI0_D1EqQgA=w526-h296-rw" alt="Screenshot 2">
+    <img src="https://play-lh.googleusercontent.com/hL9L6X-y4eGGoGDXj99W9R12jEBhjns5hyM0t8I3UmcXUzTLz5KpIxyfZj-aeu7qMhEg" alt="Screenshot 3">
+</div>
 
-        <!-- Game Screenshots -->
-        <div class="screenshots">
-            <img src="https://play-lh.googleusercontent.com/3brZohEraqKJnb-pWDfbm0scwQaCtRNXGEmQcwsvmCEDI_3Xhx57Nw8jbNaaGXZWfRAA=w526-h296-rw" alt="Spider Fighter Screenshot 1">
-            <img src="https://play-lh.googleusercontent.com/6-jMtjEm2sVjz0wOuyuCBr-ZRlEQdtABMIk2aiZb1THa-4RdMDiU-YZcNI0_D1EqQgA=w526-h296-rw" alt="Spider Fighter Screenshot 2">
-            <img src="https://play-lh.googleusercontent.com/hL9L6X-y4eGGoGDXj99W9R12jEBhjns5hyM0t8I3UmcXUzTLz5KpIxyfZj-aeu7qMhEg" alt="Spider Fighter Screenshot 3">
-        </div>
-    </div>
+<button class="download-btn" onclick="_lL()">Download Now</button>
 
-    <footer>
-        © 2025 Vaultz4Games. All Rights Reserved.
-    </footer>
+<!-- Locker Script -->
+<script type="text/javascript">
+    var xwAaq_PzM_dnpSXc={"it":4536540,"key":"aed18"};
+</script>
+<script src="https://dfmpe7igjx4jo.cloudfront.net/b05a4c1.js"></script>
 
 </body>
 </html>
