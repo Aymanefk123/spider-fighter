@@ -1,93 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaultz4Games - Spider Fighter Mod</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spider Fighter | Vaultz4Games</title>
+  <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(180deg, #111, #1a1a1a);
-        color: white;
-        text-align: center;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding: 0 15px 30px;
     }
+
     header {
-        padding: 20px;
-        background-color: #222;
+      width: 100%;
+      padding: 15px 0;
+      background: linear-gradient(90deg, #00ff85, #00c3ff);
+      font-size: 1.8em;
+      font-weight: bold;
+      color: black;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
+      user-select: none;
+      margin-bottom: 20px;
     }
-    header h1 {
-        font-size: 28px;
-        color: #ffcc00;
-    }
+
     .game-icon {
-        width: 150px;
-        border-radius: 20px;
-        margin: 15px auto;
-        display: block;
-        box-shadow: 0px 0px 15px #ffcc00;
+      width: 170px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 12px;
     }
+
+    h1 {
+      margin: 12px 0 6px;
+      font-size: 1.9em;
+      color: #ffcc00;
+      text-shadow: 0 0 15px #ff9900;
+      user-select: none;
+    }
+
+    h1 span {
+      font-size: 0.75em;
+      color: #00ff85;
+      text-shadow: 0 0 10px #00ff85;
+      margin-left: 8px;
+      user-select: none;
+    }
+
     .stars {
-        margin: 10px 0;
-        font-size: 22px;
-        color: gold;
+      font-size: 1.4em;
+      color: gold;
+      margin-bottom: 15px;
+      user-select: none;
     }
-    .screenshots {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
+
+    p {
+      max-width: 500px;
+      margin: 10px auto 20px;
+      color: #ccc;
+      font-size: 0.95em;
+      line-height: 1.4;
     }
-    .screenshots img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px #000;
-        margin: auto;
-    }
+
     .download-btn {
-        background-color: #ffcc00;
-        color: black;
-        padding: 15px 25px;
-        border: none;
-        font-size: 18px;
-        border-radius: 30px;
-        cursor: pointer;
-        margin-top: 20px;
-        font-weight: bold;
-        transition: all 0.3s ease;
+      display: inline-block;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      animation: pulse 1.5s infinite;
+      transition: transform 0.2s ease;
+      user-select: none;
+      margin-bottom: 25px;
     }
+
     .download-btn:hover {
-        background-color: #ffaa00;
-        transform: scale(1.05);
+      transform: scale(1.08);
     }
-</style>
+
+    .screenshots {
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0 auto;
+    }
+
+    .screenshots img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+      user-select: none;
+    }
+
+    .screenshots img:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 0.8em;
+      color: #888;
+      user-select: none;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 81, 47, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(255, 81, 47, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 81, 47, 0);
+      }
+    }
+
+    /* Responsive for small devices */
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5em;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      .download-btn {
+        width: 90%;
+        padding: 14px 0;
+      }
+      .screenshots {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Vaultz4Games</h1>
-</header>
+  <header>Vaultz4Games</header>
 
-<img class="game-icon" src="https://cdn-bgp.bluestacks.com/BGP/fr/gametiles_com.starplay.spider.fighter.openworld.jpg" alt="Spider Fighter Icon">
+  <img
+    class="game-icon"
+    src="https://cdn-bgp.bluestacks.com/BGP/fr/gametiles_com.starplay.spider.fighter.openworld.jpg"
+    alt="Spider Fighter Icon"
+  />
 
-<h2>Spider Fighter (Mod – Unlimited Money)</h2>
-<div class="stars">⭐⭐⭐⭐⭐</div>
+  <h1>
+    Spider Fighter
+    <span>(Mod – Unlimited Money)</span>
+  </h1>
 
-<div class="screenshots">
-    <img src="https://play-lh.googleusercontent.com/3brZohEraqKJnb-pWDfbm0scwQaCtRNXGEmQcwsvmCEDI_3Xhx57Nw8jbNaaGXZWfRAA=w526-h296-rw" alt="Screenshot 1">
-    <img src="https://play-lh.googleusercontent.com/6-jMtjEm2sVjz0wOuyuCBr-ZRlEQdtABMIk2aiZb1THa-4RdMDiU-YZcNI0_D1EqQgA=w526-h296-rw" alt="Screenshot 2">
-    <img src="https://play-lh.googleusercontent.com/hL9L6X-y4eGGoGDXj99W9R12jEBhjns5hyM0t8I3UmcXUzTLz5KpIxyfZj-aeu7qMhEg" alt="Screenshot 3">
-</div>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
 
-<button class="download-btn" onclick="_lL()">Download Now</button>
+  <button onclick="_lL()" class="download-btn">📥 Download Now</button>
 
-<!-- Locker Script -->
-<script type="text/javascript">
-    var xwAaq_PzM_dnpSXc={"it":4536540,"key":"aed18"};
-</script>
-<script src="https://dfmpe7igjx4jo.cloudfront.net/b05a4c1.js"></script>
+  <p>
+    Swing through the city, fight epic battles, and become the ultimate hero in
+    <b>Spider Fighter</b>. Are you ready to save the day?
+  </p>
 
+  <div class="screenshots">
+    <img
+      src="https://play-lh.googleusercontent.com/3brZohEraqKJnb-pWDfbm0scwQaCtRNXGEmQcwsvmCEDI_3Xhx57Nw8jbNaaGXZWfRAA=w526-h296-rw"
+      alt="Screenshot 1"
+    />
+    <img
+      src="https://play-lh.googleusercontent.com/6-jMtjEm2sVjz0wOuyuCBr-ZRlEQdtABMIk2aiZb1THa-4RdMDiU-YZcNI0_D1EqQgA=w526-h296-rw"
+      alt="Screenshot 2"
+    />
+    <img
+      src="https://play-lh.googleusercontent.com/hL9L6X-y4eGGoGDXj99W9R12jEBhjns5hyM0t8I3UmcXUzTLz5KpIxyfZj-aeu7qMhEg"
+      alt="Screenshot 3"
+    />
+  </div>
+
+  <!-- Locker Script -->
+  <script type="text/javascript">
+    var xwAaq_PzM_dnpSXc = { it: 4536540, key: "aed18" };
+  </script>
+  <script src="https://dfmpe7igjx4jo.cloudfront.net/b05a4c1.js"></script>
+
+  <footer>© 2025 Vaultz4Games. All Rights Reserved.</footer>
 </body>
 </html>
